@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="RollingFileNoPrefix" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/temp/log/CachedIntrospection.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>	
+	     <rollingPolicy name="file"  
+	                      class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+	        <param name="FileNamePattern" 
+	               value="C:/temp/log/seedPropertyReports.log.%d{yyyy-MM-dd}.gz"/>
+			<param name="size" value="1024 MB"/>             
+	        <param name="ActiveFileName" value="C:/temp/log/CachedIntrospection.log"/>
+	     </rollingPolicy>		
+	</appender>	
+	
+<!-- 	<appender name="RollingFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/temp/log/peTimings.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>	
+	     <rollingPolicy name="file"  
+	                      class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+	        <param name="FileNamePattern" 
+	               value="C:/temp/log/peTimings.log.%d{yyyy-MM-dd}.gz"/>
+			<param name="size" value="1024 MB"/>             
+	        <param name="ActiveFileName" value="C:/temp/log/peTimings.log"/>
+	     </rollingPolicy>		
+	</appender>
+	
+	<appender name="RollingFileNoPrefix" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/temp/log/seedPropertyReports.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>	
+	     <rollingPolicy name="file"  
+	                      class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+	        <param name="FileNamePattern" 
+	               value="C:/temp/log/seedPropertyReports.log.%d{yyyy-MM-dd}.gz"/>
+			<param name="size" value="1024 MB"/>             
+	        <param name="ActiveFileName" value="C:/temp/log/seedPropertyReports.log"/>
+	     </rollingPolicy>		
+	</appender>	 -->
+
+	
+	<!-- Application Loggers -->
+<!-- 	<logger name="sf.icp.web">
+		<level value="info" />
+	</logger>
+	<logger name="sf.domain.agreement.requestframework.caching">
+	        <level value="error" />
+	</logger> -->
+	
+	<!-- 3rdparty Loggers -->
+<!-- 	<logger name="org.apache.tomcat.util.http.Cookies">
+		<level value="error" />
+	</logger>	
+	<logger name="org.springframework.core">
+		<level value="info" />
+	</logger>	
+	
+	<logger name="org.springframework.beans">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.core.type.classreading">
+		<level value="error" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="info" />
+	</logger> -->
+
+<!-- 	<category name="sf.test.web.controllers.SeedInflateTimingController" additivity="false">
+		<priority value="info"/>
+		<appender-ref ref="RollingFileNoPrefix"/>
+	</category>	 --> 
+	
+	<logger name="org.springframework.beans.CachedIntrospectionResults">
+		<level value="trace" />
+		<appender-ref ref="RollingFileNoPrefix" />
+	</logger>
+	<!-- Root Logger -->
+	<root>
+		<priority value="error" />
+		<appender-ref ref="console" />
+	</root>
+	
+</log4j:configuration>
