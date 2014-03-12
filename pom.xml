@@ -20,11 +20,11 @@
 			<artifactId>gemfire</artifactId>
 			<version>7.0.1</version>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
-		</dependency>
+		</dependency> -->
 		<!-- Performance Engineering Utility Classes -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
