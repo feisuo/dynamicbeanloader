@@ -9,6 +9,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import org.springframework.core.SpringVersion;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -72,6 +73,8 @@ public class WebAppinitializer implements WebApplicationInitializer {
 		
 		// TMT
 		servletContext.addListener(new Log4jConfigListener());
+		
+		System.out.println("Application inplemented on Spring Version: " + SpringVersion.getVersion());
 
 	}
 

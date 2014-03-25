@@ -24,7 +24,7 @@
              </rollingPolicy>           
         </appender>     
         
-        <appender name="RollingFileNoPrefix2" class="org.apache.log4j.RollingFileAppender">
+        <appender name="RollingSuccessLog" class="org.apache.log4j.RollingFileAppender">
                 <param name="File" value="C:/temp/log/success.log"/>
                 <layout class="org.apache.log4j.PatternLayout">
                         <param name="ConversionPattern" value="%m%n" />
@@ -104,10 +104,10 @@
                 <appender-ref ref="RollingFileNoPrefix" />
         </logger>-->
         
-        <logger name="com.techtrip.dynbl.web.controllers.DynamicBeanController">
+<!--         <logger name="com.techtrip.dynbl.web.controllers.DynamicBeanController">
                 <level value="debug" />
-                <appender-ref ref="RollingFileNoPrefix2" />
-        </logger> 
+                <appender-ref ref="RollingSuccessLog" />
+        </logger>  -->
         <!-- Root Logger -->
         <root>
                 <priority value="error" />

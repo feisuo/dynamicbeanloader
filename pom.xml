@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.techtrip.demo</groupId>
-	<artifactId>dynamicbeanloader</artifactId>
+	<groupId>com.techtrip</groupId>
+	<artifactId>techtrip-demo-dynamicbeanloader</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
 		<java-version>1.6</java-version>
-		<org.springframework-version>3.2.8.RELEASE</org.springframework-version>
+		<org.springframework-version>3.1.4.RELEASE</org.springframework-version>
 		<artifact-deployer.version>1.0.18.RELEASE</artifact-deployer.version>
 		<org.slf4j-version>1.6.4</org.slf4j-version>
 		<org.aspectj-version>1.6.12</org.aspectj-version>
@@ -20,11 +20,11 @@
 			<artifactId>gemfire</artifactId>
 			<version>7.0.1</version>
 		</dependency>
-<!-- 		<dependency>
+		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
-		</dependency> -->
+		</dependency>
 		<!-- Performance Engineering Utility Classes -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
