@@ -10,34 +10,22 @@
                 </layout>
         </appender>
         
-        <appender name="RollingFileNoPrefix" class="org.apache.log4j.RollingFileAppender">
-                <param name="File" value="C:/temp/log/CachedIntrospection.log"/>
+        <appender name="RollingFileNoPrefix" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="C:/temp/log/CachedIntrospection.log" />
+                <param name="append" value="true" />
                 <layout class="org.apache.log4j.PatternLayout">
                         <param name="ConversionPattern" value="%m%n" />
-                </layout>       
-             <rollingPolicy name="file"  
-                              class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
-                <param name="FileNamePattern" 
-                       value="C:/temp/log/CachedIntrospection.log.%d{yyyy-MM-dd}.gz"/>
-                        <param name="size" value="1024 MB"/>             
-                <param name="ActiveFileName" value="C:/temp/log/CachedIntrospection.log"/>
-             </rollingPolicy>           
-        </appender>     
-        
-        <appender name="RollingSuccessLog" class="org.apache.log4j.RollingFileAppender">
-                <param name="File" value="C:/temp/log/success.log"/>
+                </layout>
+        </appender>
+ 
+        <appender name="RollingSuccessLog" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="C:/temp/log/success.log" />
+                <param name="append" value="true" />
                 <layout class="org.apache.log4j.PatternLayout">
                         <param name="ConversionPattern" value="%m%n" />
-                </layout>       
-             <rollingPolicy name="file"  
-                              class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
-                <param name="FileNamePattern" 
-                       value="C:/temp/log/success.log.%d{yyyy-MM-dd}.gz"/>
-                        <param name="size" value="1024 MB"/>             
-                <param name="ActiveFileName" value="C:/temp/log/success.log"/>
-             </rollingPolicy>           
-        </appender>             
-        
+                </layout>
+        </appender>
+ 
 <!--     <appender name="RollingFile" class="org.apache.log4j.RollingFileAppender">
                 <param name="File" value="C:/temp/log/peTimings.log"/>
                 <layout class="org.apache.log4j.PatternLayout">
@@ -99,15 +87,16 @@
                 <level value="info" />
         </logger> -->
         
-<!--         <logger name="org.springframework.beans.CachedIntrospectionResults">
+	 	<logger name="org.springframework.beans.CachedIntrospectionResults">
                 <level value="trace" />
                 <appender-ref ref="RollingFileNoPrefix" />
-        </logger>-->
+        </logger> 
         
-<!--         <logger name="com.techtrip.dynbl.web.controllers.DynamicBeanController">
+		<logger name="com.techtrip.dynbl.web.controllers.DynamicBeanController">
                 <level value="debug" />
                 <appender-ref ref="RollingSuccessLog" />
-        </logger>  -->
+        </logger>
+        
         <!-- Root Logger -->
         <root>
                 <priority value="error" />
